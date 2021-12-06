@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorseRiding.Views.UserViews.AllHorses"
+             Title="Наши лошади">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor5}">
+            <RefreshView x:Name="refreshView" Refreshing="refreshView_Refreshing">
+                <ListView x:Name="lvHorses" HasUnevenRows="True" Margin="5">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Margin="5" CornerRadius="40">
+                                    <Grid>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="{Binding HorseImage}" HeightRequest="100" WidthRequest="150" Aspect="AspectFit"/>
+                                            <StackLayout Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                                <Label Text="{Binding Name}"/>
+                                                <Label Text="{Binding Description}"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </RefreshView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

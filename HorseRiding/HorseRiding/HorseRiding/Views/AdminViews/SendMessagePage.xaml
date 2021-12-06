@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorseRiding.Views.AdminViews.SendMessagePage">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor5}">
+            <ScrollView>
+                <StackLayout>
+                    <Label Text="Сообщение" FontSize="Medium" Margin="13,0,0,0"/>
+                    <Editor HeightRequest="200" x:Name="eMessage" TextColor="Black" FontSize="Medium" Margin="10,0,10,0" MaxLength="200"/>
+                    <Button x:Name="bSend" Text="Отправить" Clicked="bSend_Clicked" Margin="10,0,10,0"/>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

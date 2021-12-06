@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:messsier16="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls"
+             x:Class="HorseRiding.Views.UserViews.FeedbackPage"
+             Title="Новый отзыв"
+             Shell.PresentationMode="Modal">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor5}">
+            <StackLayout Spacing="3" Padding="15">
+                <Label Text="Новый отзыв" FontSize="Medium" />
+                <Editor Text="{Binding FeedbackContent}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+                <messsier16:RatingBar x:Name="ratingBar" MaxRating="5" FilledImage="star_filled.png" Image="star.png" HeightRequest="50" FillColor="Gold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="bCancel" Text="Отмена" Clicked="bCancel_Clicked" HorizontalOptions="FillAndExpand"></Button>
+                    <Button x:Name="bSave" Text="Сохранить" Clicked="bSave_Clicked" HorizontalOptions="FillAndExpand"></Button>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

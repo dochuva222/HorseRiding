@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorseRiding.Views.TrainerViews.TrainerProfile"
+             NavigationPage.HasBackButton="False"
+             Title="Профиль">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Календарь тренировок" Clicked="ToolbarItem_Clicked"/>
+        <ToolbarItem Text="Выход" Clicked="ToolbarItem_Clicked_1"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor5}">
+            <ScrollView>
+                <StackLayout Margin="0,10,0,0">
+                    <Image Source="{Binding TrainerImage}" HeightRequest="200" WidthRequest="100" Margin="10,0,10,0"/>
+                    <Label Text="{Binding FullName, StringFormat='ФИО: {0}'}" FontSize="Medium" Margin="13,0,0,0"/>
+                    <Label Text="{Binding Phone, StringFormat='Номер телефона: {0}'}" FontSize="Medium" Margin="13,0,0,0"/>
+                    <Label Text="Пароль: " FontSize="Medium" Margin="13,0,0,0"/>
+                    <Entry x:Name="ePassword" FontSize="Medium" Margin="10,0,10,0"/>
+                    <Button x:Name="bSave" Text="Сохранить изменения" Clicked="bSave_Clicked" Margin="10,0,10,0"/>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorseRiding.Views.UserViews.UserMessagesPage"
+             Title="Уведомления">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor5}">
+            <RefreshView x:Name="refreshView" Refreshing="RefreshView_Refreshing">
+                <ListView x:Name="lvMessages" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Margin="5" CornerRadius="40">
+                                    <StackLayout>
+                                        <Label Text="{Binding Date, StringFormat='Дата: {0:d}'}" FontSize="Medium"/>
+                                        <Label Text="{Binding Message}" FontSize="Medium"/>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </RefreshView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

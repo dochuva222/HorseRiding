@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorseRiding.Views.UserViews.RentsPage"
+             Title="Мои прокаты">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor5}">
+            <AbsoluteLayout>
+                <RefreshView x:Name="refreshView" Refreshing="RefreshView_Refreshing">
+                    <ListView x:Name="lvRents" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Frame Margin="5" CornerRadius="40">
+                                        <StackLayout>
+                                            <Label Text="{Binding RentDate, StringFormat='Дата: {0:d}'}" FontSize="Medium"/>
+                                            <Label Text="{Binding RentTime, StringFormat='Время: {0:hh\\:mm}'}" FontSize="Medium"/>
+                                            <Label Text="{Binding Trainer.FullName, StringFormat='Тренер: {0}'}" FontSize="Medium"/>
+                                            <Label Text="{Binding HorseQuantity, StringFormat='Количество лошадей: {0}'}" FontSize="Medium"/>
+                                            <Button x:Name="bDelete" Text="Отменить" Clicked="bDelete_Clicked"/>
+                                        </StackLayout>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </RefreshView>
+                <ImageButton x:Name="bAddRent" Clicked="ToolbarItem_Clicked"
+                             AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".90,.90,70,70"
+                             Source="addRent_icon.png" BackgroundColor="Transparent"/>
+            </AbsoluteLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

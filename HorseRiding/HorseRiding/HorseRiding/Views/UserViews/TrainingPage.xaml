@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorseRiding.Views.UserViews.TrainingPage"
+             Shell.PresentationMode="Modal"
+             Title="Запись на курс">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor5}">
+            <ScrollView>
+                <StackLayout>
+                    <Label Text="Запись на тренировку" HorizontalOptions="Center" FontSize="Title"/>
+                    <Label Text="Курс: " Margin="10,0,0,0" FontSize="Medium"/>
+                    <Picker x:Name="pTrainingTypes" SelectedIndexChanged="pTrainingTypes_SelectedIndexChanged" ItemDisplayBinding="{Binding Name}" Margin="10,0,10,0"/>
+                    <Label Text="Дата" FontSize="Medium" Margin="13,0,0,0"/>
+                    <DatePicker x:Name="dpDate" Margin="10,0,10,0"/>
+                    <Label Text="Время" FontSize="Medium" Margin="13,0,0,0"/>
+                    <Picker x:Name="pTimes" FontSize="Medium" Margin="13,0,0,0"/>
+                    <Label x:Name="lCost" Text="Стоимость: " Margin="10,0,0,0" FontSize="Medium"/>
+                    <Frame x:Name="trainerFrame" HeightRequest="270" CornerRadius="20" Margin="10,0,10,0">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Тренер: " FontSize="Medium"/>
+                                <Label Text="{Binding FullName}" FontSize="Medium"/>
+                            </StackLayout>
+                            <Image Source="{Binding TrainerImage}" HeightRequest="200"/>
+                            <Button x:Name="bChooseTrainer" Text="Выбрать тренера" Clicked="bChooseTrainer_Clicked" Margin="10,0,10,0"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame x:Name="horseFrame" HeightRequest="270" CornerRadius="20" Margin="10,0,10,0">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Лошадь: " FontSize="Medium"/>
+                                <Label Text="{Binding Name}" FontSize="Medium"/>
+                            </StackLayout>
+                            <Image Source="{Binding HorseImage}" HeightRequest="200"/>
+                            <Button x:Name="bChooseHorse" Text="Выбрать лошадь" Clicked="bChooseHorse_Clicked" Margin="10,0,10,0"/>
+                        </StackLayout>
+                    </Frame>
+                    <Button x:Name="bSave" Text="Записаться" Clicked="bSave_Clicked" Margin="10,0,10,0"/>
+                    <Button x:Name="bCancel" Text="Отмена" Clicked="bCancel_Clicked" Margin="10,0,10,0"/>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

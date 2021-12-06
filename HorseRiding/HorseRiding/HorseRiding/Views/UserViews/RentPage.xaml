@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorseRiding.Views.UserViews.RentPage"
+             Title="Запись на прокат"
+             Shell.PresentationMode="Modal">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor5}">
+            <ScrollView>
+                <StackLayout Margin="0,20,0,0">
+                    <Label Text="Запись на прокат" HorizontalOptions="Center" FontSize="Title" />
+                    <Label Text="Дата" FontSize="Medium" Margin="13,0,0,0"/>
+                    <DatePicker x:Name="dpDate"  Margin="10,0,10,0"/>
+                    <Label Text="Время" FontSize="Medium" Margin="13,0,0,0"/>
+                    <Picker x:Name="pTimes" FontSize="Medium" Margin="10,0,10,0"/>
+                    <Label Text="Количество лошадей" FontSize="Medium" Margin="13,0,0,0"/>
+                    <Picker x:Name="pHorses" FontSize="Medium" Margin="10,0,10,0"/>
+                    <Label Text="Стоимость: 1000 р." Margin="10,0,0,0" FontSize="Medium"/>
+                    <Frame x:Name="trainerFrame" HeightRequest="270" CornerRadius="20" Margin="10,0,10,0">
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Тренер: " FontSize="Medium"/>
+                                <Label Text="{Binding FullName}" FontSize="Medium"/>
+                            </StackLayout>
+                            <Image Source="{Binding TrainerImage}" HeightRequest="200"/>
+                            <Button x:Name="bChooseTrainer" Text="Выбрать тренера" Clicked="bChooseTrainer_Clicked" Margin="10,0,10,0"/>
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Margin="0,0,10,0">
+                        <Button x:Name="bRent" Text="Записаться" Clicked="bRent_Clicked" Margin="10,0,10,0"/>
+                        <Button x:Name="bCancel" Text="Отмена" Clicked="bCancel_Clicked" Margin="10,0,10,0"/>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

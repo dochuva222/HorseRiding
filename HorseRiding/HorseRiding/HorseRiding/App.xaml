@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorseRiding.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="TitleFontColor">white</Color>
+            <Color x:Key="PrimaryFontColor">#9B5900</Color>
+            <Color x:Key="ButtonFontColor">white</Color>
+            <Color x:Key="PrimaryColor1">#FFBF6B</Color>
+            <Color x:Key="PrimaryColor2">#E99525</Color>
+            <Color x:Key="PrimaryColor3">#FFB24C</Color>
+            <Color x:Key="PrimaryColor4">#34CFBE</Color>
+            <Color x:Key="PrimaryColor5">#FFE1BA</Color>
+
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryColor1}"/>
+            </Style>
+
+            <Style TargetType="Label" >
+                <Setter Property="TextColor" Value="{StaticResource PrimaryFontColor}"/>
+            </Style>
+            <Style TargetType="Entry" >
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+            <Style TargetType="Editor" >
+                <Setter Property="TextColor" Value="{StaticResource PrimaryFontColor}"/>
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource ButtonFontColor}"></Setter>
+                <Setter Property="CornerRadius" Value="50"/>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor2}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor3}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <Style x:Key="ShellStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource PrimaryColor1}"/>
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource PrimaryFontColor}" />
+                <Setter Property="Shell.TitleColor" Value="{StaticResource TitleFontColor}"/>
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource PrimaryColor1}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource PrimaryFontColor}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource PrimaryFontColor}"/>
+            </Style>
+            
+            <Style TargetType="TabBar" BasedOn="{StaticResource ShellStyle}"/>
+            
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource ShellStyle}"/>
+
+            <Style Class="FlyoutItemLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource PrimaryFontColor}"></Setter>
+            </Style>
+
+            <Style Class="FlyoutItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{x:OnPlatform UWP=Transparent, iOS=White}" />
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Key=PrimaryFontColor}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor1}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <Style Class="MenuItemLayoutStyle" TargetType="Layout" ApplyToDerivedTypes="True">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter TargetName="FlyoutItemLabel" Property="Label.TextColor" Value="{StaticResource Key=TitleFontColor}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>        
+    </Application.Resources>
+</Application>

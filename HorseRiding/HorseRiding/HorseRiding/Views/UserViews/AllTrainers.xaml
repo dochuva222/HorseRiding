@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorseRiding.Views.UserViews.AllTrainers"
+             Title="Наши тренеры">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor5}">
+            <RefreshView x:Name="refreshView" Refreshing="refreshView_Refreshing">
+                <ListView x:Name="lvTrainers" HasUnevenRows="True" Margin="5">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Margin="5" CornerRadius="40">
+                                    <Grid>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Image Source="{Binding TrainerImage}" HeightRequest="100" WidthRequest="150" Aspect="AspectFit"/>
+                                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                                <Label Text="{Binding FullName}"/>
+                                                <Label Text="{Binding Experience}"/>
+                                                <Label Text="{Binding TrainingType.Name}"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </RefreshView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorseRiding.Views.TrainerViews.TrainerCalendarPage"
+             xmlns:controls="clr-namespace:Xamarin.Plugin.Calendar.Controls;assembly=Xamarin.Plugin.Calendar"
+             Title="Календарь тренирвок">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor5}">
+            <RefreshView x:Name="refreshView" Refreshing="refreshView_Refreshing">
+                <StackLayout>
+                    <controls:Calendar x:Name="trainingsCalendar" Margin="10" ArrowsColor="{StaticResource PrimaryFontColor}"
+                                   YearLabelColor="{StaticResource PrimaryFontColor}" MonthLabelColor="{StaticResource PrimaryFontColor}"
+                                   DaysTitleColor="{StaticResource PrimaryFontColor}" SelectedDateColor="{StaticResource PrimaryFontColor}"
+                                   SelectedDayBackgroundColor="{StaticResource PrimaryColor2}" TodayFillColor="{StaticResource PrimaryColor3}"
+                                   TodayOutlineColor="{StaticResource PrimaryColor2}">
+                        <controls:Calendar.EventTemplate>
+                            <DataTemplate>
+                                <StackLayout Margin="5">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding TrainingType.Name}"/>
+                                        <Label Text="{Binding TrainingDate, StringFormat='{0:d}'}"/>
+                                        <Label Text="{Binding TrainingTime, StringFormat='{0:hh\\:mm}'}"/>
+                                    </StackLayout>
+                                    <Label Text="{Binding Trainer.FullName, StringFormat='Тренер: {0}'}"/>
+                                    <Label Text="{Binding Horse.Name, StringFormat='Лошадь: {0}'}"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </controls:Calendar.EventTemplate>
+                    </controls:Calendar>
+                </StackLayout>
+            </RefreshView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

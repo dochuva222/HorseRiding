@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:HorseRiding.Views.AdminViews"
+       Title="HorseRiding"
+       x:Class="HorseRiding.Views.AdminViews.AdminShell"
+       FlyoutBackgroundColor="{StaticResource PrimaryColor5}">
+
+    <Shell.FlyoutHeader>
+        <StackLayout BackgroundColor="{StaticResource PrimaryColor1}">
+            <Image Source="logo.png" HeightRequest="150" WidthRequest="200" Aspect="AspectFill"/>
+        </StackLayout>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Тренировки" Icon="calendar_icon.png">
+        <ShellContent Route="AdminTrainingsPage" ContentTemplate="{DataTemplate local:AdminTrainingsPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Записи на прокат" Icon="rent_icon.png">
+        <ShellContent Route="AdminRentsPage"  ContentTemplate="{DataTemplate local:AdminRentsPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Отзывы" Icon="feedback_icon.png">
+        <ShellContent Route="AdminFeedbacksPage" ContentTemplate="{DataTemplate local:AdminFeedbacksPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Лошади" Icon="horses_icon.png">
+        <ShellContent Route="AdminHorsesPage" ContentTemplate="{DataTemplate local:AdminHorsesPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Тренеры" Icon="trainer_icon.png">
+        <ShellContent Route="AdminTrainersPage" ContentTemplate="{DataTemplate local:AdminTrainersPage}"/>
+    </FlyoutItem>
+    <MenuItem Text="Выход" Clicked="MenuItem_Clicked"/>
+    
+</Shell>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:messsier16="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls"
+             x:Class="HorseRiding.Views.AdminViews.AdminFeedbacksPage"
+             Title="Отзывы">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor5}">
+            <RefreshView x:Name="refreshView" Refreshing="refreshView_Refreshing">
+                <ListView x:Name="lvFeedbacks" HasUnevenRows="True" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Margin="5" CornerRadius="40">
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Frame CornerRadius="90" IsClippedToBounds="True" Padding="0" HeightRequest="50" WidthRequest="50" >
+                                                <Image x:Name="userImage" Source="{Binding User.UserImage}" Aspect="Fill"/>
+                                            </Frame>
+                                            <Label Text="{Binding User.Firstname}" FontSize="Medium"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Дата: " FontSize="Medium"/>
+                                            <Label Text="{Binding Date, StringFormat='{}{0:d}'}" FontSize="Medium"/>
+                                        </StackLayout>
+                                        <Label Text="{Binding FeedbackContent}"/>
+                                        <messsier16:RatingBar Rating="{Binding Rating}" Image="star.png" FilledImage="star_filled.png" HeightRequest="20" FillColor="Gold" MaxRating="5" IsEnabled="False"/>
+                                        <Button x:Name="bDelete" Text="Удалить" Clicked="bDelete_Clicked"/>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </RefreshView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

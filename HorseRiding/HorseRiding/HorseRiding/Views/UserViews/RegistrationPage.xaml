@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorseRiding.Views.UserViews.RegistrationPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{StaticResource PrimaryColor5}">
+            <Label Text="Регистрация" FontSize="Title" HorizontalOptions="Center"/>
+            <Label Text="Имя" FontSize="Medium" Margin="13,0,0,0"/>
+            <Entry Text="{Binding Firstname}" FontSize="Medium" Margin="10,0,0,0" MaxLength="50"/>
+            <Label Text="Фамилия" FontSize="Medium" Margin="13,0,0,0"/>
+            <Entry Text="{Binding Lastname}" FontSize="Medium" Margin="10,0,0,0" MaxLength="50"/>
+            <Label Text="Телефон" FontSize="Medium" Margin="13,0,0,0"/>
+            <Entry Text="{Binding Phone}" FontSize="Medium" Margin="10,0,0,0" MaxLength="11" Keyboard="Numeric"/>
+            <Label Text="Пароль" FontSize="Medium" Margin="13,0,0,0"/>
+            <Entry Text="{Binding Password}" FontSize="Medium" Margin="10,0,0,0" MaxLength="50"/>
+            <Button x:Name="bRegistration" Text="Зарегестрироваться" Clicked="bRegistration_Clicked" Margin="10,0,10,0"/>
+            <Button x:Name="bCancel" Text="Отмена" Clicked="bCancel_Clicked" Margin="10,0,10,0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

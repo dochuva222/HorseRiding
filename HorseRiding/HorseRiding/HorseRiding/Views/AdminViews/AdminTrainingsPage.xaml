@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorseRiding.Views.AdminViews.AdminTrainingsPage"
+             Title="Тренировки">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor5}">
+            <RefreshView x:Name="refreshView" Refreshing="RefreshView_Refreshing">
+                <ListView x:Name="lvTrainings" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Margin="5" CornerRadius="40">
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Клиент: " FontSize="Medium"/>
+                                            <Label Text="{Binding User.FullName}" FontSize="Medium"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Дата: " FontSize="Medium"/>
+                                            <Label Text="{Binding TrainingDate, StringFormat='{0:d}'}" FontSize="Medium"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Время: " FontSize="Medium"/>
+                                            <Label Text="{Binding TrainingTime, StringFormat='{0:hh\\:mm}'}" FontSize="Medium"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Тренер: " FontSize="Medium"/>
+                                            <Label Text="{Binding Trainer.FullName}" FontSize="Medium"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="Курс: " FontSize="Medium"/>
+                                            <Label Text="{Binding TrainingType.Name}" FontSize="Medium"/>
+                                        </StackLayout>
+                                        <Button x:Name="bDelete" Text="Отменить" Clicked="bDelete_Clicked"/>
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </RefreshView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

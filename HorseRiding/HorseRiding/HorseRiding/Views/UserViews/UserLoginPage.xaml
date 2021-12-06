@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HorseRiding.Views.UserViews.UserLoginPage"
+             Shell.NavBarIsVisible="False"
+             Title="Клиент">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor5}">
+            <StackLayout>
+                <StackLayout Padding="0,-50,0,-100">
+                    <Image Source="logo.png"/>
+                </StackLayout>
+                <Label Text="Авторизация" HorizontalOptions="Center" FontSize="Title"/>
+                <Label Text="Номер телефона" FontSize="Medium" Margin="10,0,0,0"/>
+                <Entry x:Name="eLogin" Margin="10,0,10,0" Keyboard="Numeric" MaxLength="11"/>
+                <Label Text="Пароль" FontSize="Medium" Margin="10,0,0,0"/>
+                <Entry x:Name="ePassword" Margin="10,0,10,0" IsPassword="True" MaxLength="50"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Показать пароль" Margin="10,0,0,0"/>
+                    <Switch x:Name="showPaswordSwitch" Toggled="showPaswordSwitch_Toggled"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="End" >
+                    <Button x:Name="bLogin" Text="Войти" Clicked="bLogin_Clicked" Margin="0,0,10,0"/>
+                    <Button x:Name="bRegistration" Text="Регистрация" Clicked="bRegistration_Clicked" Margin="0,0,10,0"/>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

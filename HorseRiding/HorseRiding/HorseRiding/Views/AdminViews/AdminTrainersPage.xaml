@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorseRiding.Views.AdminViews.AdminTrainersPage"
+             Title="Тренеры">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor5}">
+            <AbsoluteLayout>
+                <RefreshView x:Name="refreshView" Refreshing="refreshView_Refreshing">
+                    <ListView x:Name="lvTrainers" HasUnevenRows="True" Margin="5">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Frame Margin="5" CornerRadius="40">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="2*"/>
+                                                <ColumnDefinition Width="3*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image Source="{Binding TrainerImage}" HeightRequest="150" WidthRequest="200" Aspect="Fill"/>
+                                            <StackLayout Grid.Column="1">
+                                                <Label Text="{Binding FullName}"/>
+                                                <Label Text="{Binding Experience}"/>
+                                                <Label Text="{Binding TrainingType.Name}"/>
+                                            </StackLayout>
+                                            <StackLayout HeightRequest="50" Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
+                                                <Button x:Name="bEdit" Text="Редактировать" Clicked="bEdit_Clicked"/>
+                                                <Button x:Name="bDelete" Text="Удалить" Clicked="bDelete_Clicked"/>
+                                            </StackLayout>
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </RefreshView>
+                <ImageButton x:Name="bAddTrainer" Clicked="bAddTrainer_Clicked"
+                             AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".90,.90,70,70"
+                             Source="add_icon.png" BackgroundColor="Transparent"/>
+            </AbsoluteLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

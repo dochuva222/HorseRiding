@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:HorseRiding.Views.UserViews"
+       Title="HorseRiding"
+       x:Class="HorseRiding.UserShell"
+       FlyoutBackgroundColor="{StaticResource PrimaryColor5}">
+    
+    <Shell.FlyoutHeader>
+        <StackLayout BackgroundColor="{StaticResource PrimaryColor1}">
+            <Image Source="logo.png" HeightRequest="150" WidthRequest="200" Aspect="AspectFill"/>
+        </StackLayout>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Календарь тренировок" Icon="calendar_icon.png">
+        <ShellContent Route="CalendarPage" ContentTemplate="{DataTemplate local:CalendarPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Прокат" Icon="rent_icon.png">
+        <ShellContent Route="RentsPage"  ContentTemplate="{DataTemplate local:RentsPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Профиль" Icon="user_icon.png">
+        <ShellContent Route="ProfilePage" ContentTemplate="{DataTemplate local:ProfilePage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Уведомления" Icon="feedback_icon.png">
+        <ShellContent Route="UserMessagesPage" ContentTemplate="{DataTemplate local:UserMessagesPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Отзывы" Icon="feedback_icon.png">
+        <ShellContent Route="FeedbacksPage" ContentTemplate="{DataTemplate local:FeedbacksPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Наши лошади" Icon="horses_icon.png">
+        <ShellContent Route="AllHorses" ContentTemplate="{DataTemplate local:AllHorses}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Наши тренеры" Icon="trainer_icon.png">
+        <ShellContent Route="AllTrainers" ContentTemplate="{DataTemplate local:AllTrainers}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Курсы" Icon="trainer_icon.png">
+        <ShellContent Route="CoursesPage" ContentTemplate="{DataTemplate local:CoursesPage}"/>
+    </FlyoutItem>
+    <MenuItem x:Name="miYoutube" Text="Видеоуроки" Clicked="miYoutube_Clicked" IconImageSource="youtube_icon.png"/>
+    <MenuItem Text="Выход" Clicked="OnMenuItemClicked"/>
+
+</Shell>

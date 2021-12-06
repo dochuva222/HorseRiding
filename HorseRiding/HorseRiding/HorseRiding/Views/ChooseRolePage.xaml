@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HorseRiding.Views.ChooseRolePage"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False">
+    <ContentPage.Content>
+        <Grid BackgroundColor="{StaticResource PrimaryColor5}">
+            <StackLayout>
+                <StackLayout Padding="0,0,0,-100">
+                    <Image Source="logo.png"/>
+                </StackLayout>
+                <Label Text="Авторизация" HorizontalOptions="Center" FontSize="Title"/>
+                <Button x:Name="bUser" Text="Я клиент" Clicked="bUser_Clicked"  Margin="10,0,10,0"/>
+                <Button x:Name="bTrainer" Text="Я тренер" Clicked="bTrainer_Clicked"  Margin="10,0,10,0"/>
+                <Button x:Name="bAdmin" Text="Я администратор" Clicked="bAdmin_Clicked"  Margin="10,0,10,0"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+    
